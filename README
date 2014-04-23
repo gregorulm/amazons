@@ -1,0 +1,56 @@
+TDA452 Functional Programming
+Lab Group 19 (Gregor Ulm, Benjamin Liebe)
+Lab 4: Game of the Amazons
+
+How to build and run
+--------------------
+
+The project can be build using "cabal install".
+(tested on Haskell Platform, Windows).
+
+Alternatively, the file src/Main.hs can be run in GHCi, calling "main" will
+start the game loop.
+ 
+The executable can be started with no parameters, then it starts with a
+blank board. It is also possible to specify the name for a board file,
+which is loaded upon start of the game.
+
+Some example boards to load can be found in doc/examples
+
+How to build documentation
+--------------------------
+
+The definitions are described with Haddock comments. A HTML description of
+them can be created using the following command:
+
+  > cabal --executable haddock
+
+The documentation can then be found in dist/doc/html/amazons/...
+
+How to play the game
+--------------------
+
+White and Black enter their moves sequentially.
+A move is entered in two steps:
+
+  Step 1: Move an amazon by entering from-to coordinates (e.g. "d1 d2").
+          The movable amazons are marked red.
+          
+  Step 2: Shoot an arrow by entering target coordinate (e.g. "d9").
+          The valid targets are marked red.
+  
+Example:  
+  
+Prompt: White's move (from, to):
+Input:  d1 d2
+
+Prompt: White's target:
+Input:  d1
+
+Prompt: Black's move (from, to):
+[... and so on ...]
+
+How to run QuickCheck properties
+--------------------------------
+
+QC properties can be executed by running src\QC.hs in GHCi and calling "main"
